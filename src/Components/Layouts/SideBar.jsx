@@ -49,14 +49,14 @@ const SideBar = ({ children, posisi }) => {
         } bg-blue-900 h-screen p-5 pt-8 relative duration-300`}
       >
         <img
-          src="./src/assets/control.png"
+          src="/src/assets/control.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
         <div className="flex gap-x-4 items-center">
           <img
-            src="./src/assets/logo.png"
+            src="/src/assets/logo.png"
             className={`cursor-pointer duration-500 ${
               open && "rotate-[360deg]"
             }`}
@@ -79,7 +79,7 @@ const SideBar = ({ children, posisi }) => {
                   Menu.title === posisi && "bg-light-white"
                 } `}
               >
-                <img src={`./src/assets/${Menu.src}.png`} />
+                <img src={`/src/assets/${Menu.src}.png`} />
                 <span
                   className={`${!open && "hidden"} origin-left duration-200`}
                 >
@@ -97,7 +97,7 @@ const SideBar = ({ children, posisi }) => {
               }}
               className={`flex w-full mt-2 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <img src={`./src/assets/Setting.png`} />
+              <img src={`/src/assets/Setting.png`} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 Logout
               </span>
