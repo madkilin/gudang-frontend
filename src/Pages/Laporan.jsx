@@ -39,7 +39,9 @@ const Laporan = () => {
   }, []);
 
   const getBarang = async () => {
-    const response = await axios.get("http://localhost:3000/Laporan");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Laporan"
+    );
     console.log(response.data);
     const sortedData = [...response.data].sort(
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
@@ -100,17 +102,21 @@ const Laporan = () => {
   };
 
   const getBarangID = async (value) => {
-    const response = await axios.get("http://localhost:3000/Laporan/" + value);
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Laporan/" + value
+    );
     console.log(response.data);
     if (response.data?.JenisLaporan === "Pengeluaran") {
       const response2 = await axios.get(
-        "http://localhost:3000/LaporanPengeluaran/" + response.data.id
+        "https://gudang-backend-production.up.railway.app/LaporanPengeluaran/" +
+          response.data.id
       );
       console.log(response2.data);
       return ["Pengeluaran", response2.data, response.data];
     } else if (response.data?.JenisLaporan === "Penerimaan") {
       const response2 = await axios.get(
-        "http://localhost:3000/LaporanPenerimaan/" + response.data.id
+        "https://gudang-backend-production.up.railway.app/LaporanPenerimaan/" +
+          response.data.id
       );
       console.log(response2.data);
       return ["Penerimaan", response2.data, response.data];

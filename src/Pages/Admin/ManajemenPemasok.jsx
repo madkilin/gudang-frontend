@@ -50,18 +50,25 @@ const ManajemenPemasok = () => {
   }, []);
 
   const getPemasok = async () => {
-    const response = await axios.get("http://localhost:3000/Pemasok");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Pemasok"
+    );
     console.log(response.data);
     setTABLE_ROWS(response.data);
   };
 
   const getPemasokID = async (value) => {
-    const response = await axios.get("http://localhost:3000/Pemasok/" + value);
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Pemasok/" + value
+    );
     return response.data;
   };
 
   const tambahPemasok = async (value) => {
-    const response = await axios.post("http://localhost:3000/Pemasok/", value);
+    const response = await axios.post(
+      "https://gudang-backend-production.up.railway.app/Pemasok/",
+      value
+    );
     console.log(response.data);
 
     setStatusCreate("Berhasil menambah data");
@@ -70,7 +77,7 @@ const ManajemenPemasok = () => {
   };
   const deletePemasokID = async (value) => {
     const response = await axios.delete(
-      "http://localhost:3000/Pemasok/" + value
+      "https://gudang-backend-production.up.railway.app/Pemasok/" + value
     );
     console.log(response.data);
     setStatusCreate("Berhasil menghapus data");
@@ -80,7 +87,7 @@ const ManajemenPemasok = () => {
 
   const editPemasokID = async (value, data) => {
     const response = await axios.patch(
-      "http://localhost:3000/Pemasok/" + value,
+      "https://gudang-backend-production.up.railway.app/Pemasok/" + value,
       data
     );
     setStatusCreate("Berhasil mengedit data");

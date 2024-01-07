@@ -68,7 +68,9 @@ const PenerimaanBarang = () => {
     });
   };
   const getPemasokID = async (value) => {
-    const response = await axios.get("http://localhost:3000/Pemasok/" + value);
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Pemasok/" + value
+    );
     if (response.data) {
       return response.data;
     } else {
@@ -93,7 +95,7 @@ const PenerimaanBarang = () => {
   };
   const getBarangKode = async (value) => {
     const response = await axios.get(
-      "http://localhost:3000/BarangKode/" + value
+      "https://gudang-backend-production.up.railway.app/BarangKode/" + value
     );
     if (response.data) {
       return response.data;
@@ -109,7 +111,7 @@ const PenerimaanBarang = () => {
   const [HasilAdd, setHasilAdd] = React.useState("");
   const createPenerimaan = async (value) => {
     const response = await axios.post(
-      "http://localhost:3000/Penerimaan/",
+      "https://gudang-backend-production.up.railway.app/Penerimaan/",
       value
     );
     if (response.data) {

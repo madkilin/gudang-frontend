@@ -24,10 +24,13 @@ const FormLogin = () => {
   const [msg, setMsg] = React.useState("");
 
   const Login = async () => {
-    const response = await axios.post("http://localhost:3000/login", {
-      username,
-      password,
-    });
+    const response = await axios.post(
+      "https://gudang-backend-production.up.railway.app/login",
+      {
+        username,
+        password,
+      }
+    );
     console.log(response.data);
     if (response.data.status === "404") {
       setMsg(response.data.message);

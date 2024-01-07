@@ -5,15 +5,21 @@ const Dashboard = () => {
   const [dataBarang, setDataBarang] = React.useState([]);
   const [dataAdmin, setDataAdmin] = React.useState([]);
   const getBarang = async () => {
-    const response = await axios.get("http://localhost:3000/Barang");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Barang"
+    );
     console.log(response.data);
     setDataBarang(response.data);
   };
 
   const getDataAdmin = async () => {
-    const response = await axios.get("http://localhost:3000/Users");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Users"
+    );
     console.log(response.data);
-    const response2 = await axios.get("http://localhost:3000/Pemasok");
+    const response2 = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Pemasok"
+    );
     console.log(response2.data);
     setDataAdmin([response.data.length, response2.data.length]);
   };
@@ -126,7 +132,7 @@ import { Link } from "react-router-dom";
 function CheckIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
@@ -195,7 +201,7 @@ function CardWithLink({ to, title, desk, button }) {
           >
             {button}
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}

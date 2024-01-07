@@ -37,7 +37,7 @@ const PengeluaranBarang = () => {
   const [HasilAdd, setHasilAdd] = React.useState("");
   const createPengeluaran = async (value) => {
     const response = await axios.post(
-      "http://localhost:3000/Pengeluaran/",
+      "https://gudang-backend-production.up.railway.app/Pengeluaran/",
       value
     );
     if (response.data) {
@@ -70,7 +70,7 @@ const PengeluaranBarang = () => {
   };
   const getBarangKode = async (value) => {
     const response = await axios.get(
-      "http://localhost:3000/BarangKode/" + value
+      "https://gudang-backend-production.up.railway.app/BarangKode/" + value
     );
     if (response.data) {
       return response.data;

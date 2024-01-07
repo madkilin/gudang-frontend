@@ -36,13 +36,17 @@ const StokGudang = () => {
   }, []);
 
   const getBarang = async () => {
-    const response = await axios.get("http://localhost:3000/Barang");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Barang"
+    );
     console.log(response.data);
     setTABLE_ROWS(response.data);
   };
 
   const getBarangID = async (value) => {
-    const response = await axios.get("http://localhost:3000/Barang/" + value);
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Barang/" + value
+    );
     return response.data;
   };
 

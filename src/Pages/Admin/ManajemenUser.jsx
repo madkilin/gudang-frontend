@@ -50,25 +50,34 @@ const ManajemenUser = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:3000/users");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/users"
+    );
     console.log(response.data);
     setTABLE_ROWS(response.data);
   };
 
   const getUsersID = async (value) => {
-    const response = await axios.get("http://localhost:3000/users/" + value);
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/users/" + value
+    );
     return response.data;
   };
 
   const tambahUsers = async (value) => {
-    const response = await axios.post("http://localhost:3000/users/", value);
+    const response = await axios.post(
+      "https://gudang-backend-production.up.railway.app/users/",
+      value
+    );
     console.log(response.data);
     setStatusCreate("Berhasil menambah data");
     setDialogSukses("md");
     return response.data;
   };
   const deleteUsersID = async (value) => {
-    const response = await axios.delete("http://localhost:3000/users/" + value);
+    const response = await axios.delete(
+      "https://gudang-backend-production.up.railway.app/users/" + value
+    );
     console.log(response.data);
     setStatusCreate("Berhasil menghapus data");
     setDialogSukses("md");
@@ -77,7 +86,7 @@ const ManajemenUser = () => {
 
   const editUsersID = async (value, data) => {
     const response = await axios.patch(
-      "http://localhost:3000/users/" + value,
+      "https://gudang-backend-production.up.railway.app/users/" + value,
       data
     );
     setStatusCreate("Berhasil mengedit data");

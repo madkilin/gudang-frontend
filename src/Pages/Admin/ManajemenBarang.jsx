@@ -58,18 +58,25 @@ const ManajemenBarang = () => {
   }, []);
 
   const getBarang = async () => {
-    const response = await axios.get("http://localhost:3000/Barang");
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Barang"
+    );
     console.log(response.data);
     setTABLE_ROWS(response.data);
   };
 
   const getBarangID = async (value) => {
-    const response = await axios.get("http://localhost:3000/Barang/" + value);
+    const response = await axios.get(
+      "https://gudang-backend-production.up.railway.app/Barang/" + value
+    );
     return response.data;
   };
 
   const tambahBarang = async (value) => {
-    const response = await axios.post("http://localhost:3000/Barang/", value);
+    const response = await axios.post(
+      "https://gudang-backend-production.up.railway.app/Barang/",
+      value
+    );
     console.log(response.data);
     setStatusCreate("Berhasil menambah data");
     setDialogSukses("md");
@@ -77,7 +84,7 @@ const ManajemenBarang = () => {
   };
   const deleteBarangID = async (value) => {
     const response = await axios.delete(
-      "http://localhost:3000/Barang/" + value
+      "https://gudang-backend-production.up.railway.app/Barang/" + value
     );
     setStatusCreate("Berhasil menghapus data");
     setDialogSukses("md");
@@ -87,7 +94,7 @@ const ManajemenBarang = () => {
 
   const editBarangID = async (value, data) => {
     const response = await axios.patch(
-      "http://localhost:3000/Barang/" + value,
+      "https://gudang-backend-production.up.railway.app/Barang/" + value,
       data
     );
     setStatusCreate("Berhasil mengedit data");

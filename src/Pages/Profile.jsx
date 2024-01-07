@@ -7,7 +7,7 @@ const Profile = () => {
   const [datadetail, setDataDetail] = React.useState(null);
   const getUsers = async () => {
     const response = await axios.get(
-      "http://localhost:3000/users/" +
+      "https://gudang-backend-production.up.railway.app/users/" +
         JSON.parse(localStorage.getItem("Login")).id
     );
     console.log(response.data);
